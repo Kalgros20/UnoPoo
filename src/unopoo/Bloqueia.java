@@ -9,6 +9,8 @@ package unopoo;
  *
  * @author 218736
  */
-public class Bloqueia {
-    
+public class Bloqueia extends Carta {
+    public void bloqueiaJogador(){
+        
+    }
 }

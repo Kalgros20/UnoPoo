@@ -9,6 +9,19 @@ package unopoo;
  *
  * @author 218736
  */
-public class Jogador {
+public class Jogador 
+{
+    private String Nome;
+    private int pontuacao;
+    
+    public void  suaVez(){
+        
+    }
+    public void  comprar(){
+        
+    }
+    public void  uno(){
+        
+    }
     
 }

@@ -9,6 +9,6 @@ package unopoo;
  *
  * @author 218736
  */
-public class MaisDois {
+public class MaisDois extends Carta {
     
 }
