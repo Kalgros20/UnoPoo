@@ -5,6 +5,8 @@
  */
 package unopoo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author 218736
@@ -13,14 +15,26 @@ public class Jogador
 {
     private String Nome;
     private int pontuacao;
+    ArrayList maoJogador = new ArrayList();
+
     
-    public void  suaVez(){
+    public void  fazerJogada(){
         
     }
+    
     public void  comprar(){
         
     }
+    
     public void  uno(){
+        
+    }
+    
+    public void escolheCor(){
+        
+    }
+    
+    public void bater(){
         
     }
     

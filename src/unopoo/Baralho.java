@@ -10,6 +10,12 @@ package unopoo;
  * @author 218736
  */
 public class Baralho extends Carta
-{
+{    
+    public void embaralhar(){
+        
+    }
     
+    public void distribuirCartas(){
+        
+    }
 }

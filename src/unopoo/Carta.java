@@ -8,12 +8,13 @@ package unopoo;
 import java.sql.Connection; // conexão SQL para Java;
 import java.sql.DriverManager;// driver de conexão SQL para Java;
 import java.sql.SQLException;// classe para tratamento de exceções
+import java.util.ArrayList;
 
 /**
  *
  * @author 218736
  */
-public abstract class Carta {
+public class Carta {
 
     String valor;
     String tipo;

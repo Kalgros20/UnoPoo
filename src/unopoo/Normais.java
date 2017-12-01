@@ -10,5 +10,7 @@ package unopoo;
  * @author 218736
  */
 public class Normais extends Carta {
-    
+    public void trocarCor(){
+        
+    }
 }

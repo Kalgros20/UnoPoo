@@ -10,5 +10,7 @@ package unopoo;
  * @author 218736
  */
 public class MaisDois extends Carta {
-    
+    public void compraDuas(){
+        
+    }
 }
