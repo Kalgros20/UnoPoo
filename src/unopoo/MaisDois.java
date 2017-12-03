@@ -9,7 +9,7 @@ package unopoo;
  *
  * @author 218736
  */
-public class MaisDois extends Carta {
+public class MaisDois {
     public void compraDuas(){
         
     }
