@@ -9,7 +9,7 @@ package unopoo;
  *
  * @author 218736
  */
-public class Inverte extends Carta {
+public class Inverte  {
     public void inverteJogador(){
         
     }
