@@ -17,6 +17,13 @@ public class Jogador
     private int pontuacao;
     ArrayList maoJogador = new ArrayList();
 
+    public ArrayList getMaoJogador() {
+        return maoJogador;
+    }
+
+    public void setMaoJogador(ArrayList maoJogador) {
+        this.maoJogador = maoJogador;
+    }
     
     public void  fazerJogada(){
         

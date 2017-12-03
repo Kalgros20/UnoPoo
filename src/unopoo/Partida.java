@@ -16,6 +16,6 @@ public class Partida {
        
        Baralho baralho = new Baralho();
        baralho.embaralhar();
-       baralho.distribuirCartas();
+       
    }
 }
