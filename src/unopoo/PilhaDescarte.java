@@ -5,12 +5,14 @@
  */
 package unopoo;
 
-import java.util.ArrayList;
+
+import java.util.Stack;
+
 
 /**
  *
  * @author 218736
  */
-public class PilhaDescarte extends Carta{
-    ArrayList pilhaDescarte = new ArrayList();
+public class PilhaDescarte {
+    Stack pilhaDescarte = new Stack();
 }

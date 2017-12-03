@@ -16,6 +16,13 @@ import java.util.ArrayList;
  */
 public class Carta {
 
+    public Carta(String valor, String tipo, String cor) {
+        this.valor = valor;
+        this.tipo = tipo;
+        this.cor = cor;
+    }
+
+
     String valor;
     String tipo;
     String cor;
