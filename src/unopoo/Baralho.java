@@ -6,12 +6,17 @@
 package unopoo;
 
 import java.util.ArrayList;
-
+import java.util.List;
 /**
  *
  * @author 218736
  */
 public class Baralho {
+
+    public Baralho() {
+        criaCartasNormais();
+        criaCartasEspeciais();
+    }
 
     private ArrayList<Carta> baralho = new ArrayList<Carta>();
     private int numeroDeCartas = 76;
@@ -33,7 +38,7 @@ public class Baralho {
                 
     }
     
-    public void criaCartasEspeciais(){
+    public ArrayList<Carta> criaCartasEspeciais(){
          for (int i = 0; i < 2; i++) {
             baralho.add(new Carta("Bloqueia","especial","Azul"));
             baralho.add(new Carta("Bloqueia","especial","Verde"));
@@ -52,7 +57,9 @@ public class Baralho {
         }
         for (int i = 0; i < 4; i++) {
             baralho.add(new Carta("MaisQuatro","especial",""));
-        }        
+        }
+
+            return baralho;
     }
 
     public void embaralhar() {
@@ -60,8 +67,9 @@ public class Baralho {
     }
 
     public void distribuirCartas(Jogador jogador1, Jogador jogador2) {
-        for (int i = 0; i < 7; i++) {;
-            jogador1.maoJogador.add(baralho.get(i));
+        for (int i = 0; i < 7; i++) {
+            Carta cartaTemp = baralho.get(i);
+            jogador1.maoJogador.add(cartaTemp);
         }
   
     }
