@@ -59,7 +59,10 @@ public class Baralho {
 
     }
 
-    public void distribuirCartas(Jogador jogador1, Jogador jogador2){
-         
+    public void distribuirCartas(Jogador jogador1, Jogador jogador2) {
+        for (int i = 0; i < 7; i++) {;
+            jogador1.maoJogador.add(baralho.get(i));
+        }
+  
     }
 }

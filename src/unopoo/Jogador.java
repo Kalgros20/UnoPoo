@@ -15,7 +15,7 @@ public class Jogador
 {
     private String Nome;
     private int pontuacao;
-    ArrayList maoJogador = new ArrayList();
+    ArrayList<Carta> maoJogador = new ArrayList<Carta>();
 
     public ArrayList getMaoJogador() {
         return maoJogador;
