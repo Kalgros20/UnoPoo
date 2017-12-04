@@ -22,6 +22,7 @@ public class Baralho {
     private ArrayList<Carta> baralho = new ArrayList<Carta>();
     private final int  numeroDeCartas = 76;
     
+    
 
     public void criaCartasNormais() {
         
@@ -95,7 +96,8 @@ public class Baralho {
         }
     }
     
-    public void discartaPrimeiraCarta(){
+    public PilhaDescarte discartaPrimeiraCarta(){
+        
         int tamBaralho = baralho.size();
         Carta discarteTopoDoMonte = baralho.get(tamBaralho - 1 );
         int i = 2;
@@ -103,6 +105,7 @@ public class Baralho {
         while (ver != true){
             if(discarteTopoDoMonte.tipo.equals("especial"))
             {
+                baralho.remove(tamBaralho - 1);
                 tamBaralho--;
                 System.out.println("if");
                 discarteTopoDoMonte = baralho.get(tamBaralho - 1 );
@@ -114,7 +117,10 @@ public class Baralho {
                 ver = true;
             }
         }
-        tamBaralho = baralho.size();
-        System.out.println(tamBaralho);
+        
+        PilhaDescarte descarte = new PilhaDescarte();
+        descarte.pilhaDescarte.push(discarteTopoDoMonte);
+        
+        return descarte;
     }
 }
