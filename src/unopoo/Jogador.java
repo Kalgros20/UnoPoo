@@ -17,12 +17,12 @@ public class Jogador
     private int pontuacao;
     ArrayList<Carta> maoJogador = new ArrayList<Carta>();
 
-    public ArrayList getMaoJogador() {
-        return maoJogador;
+    public void adicionaCarta(Carta carta) {
+        maoJogador.add(carta);
     }
 
-    public void setMaoJogador(ArrayList maoJogador) {
-        this.maoJogador = maoJogador;
+    public void removeJogador(Carta carta) {
+         maoJogador.remove(carta);
     }
     
     public void  fazerJogada(){
