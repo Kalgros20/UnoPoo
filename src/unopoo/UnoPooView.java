@@ -5,6 +5,8 @@
  */
 package unopoo;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Thaís
@@ -228,6 +230,184 @@ public class UnoPooView extends javax.swing.JFrame {
                 new UnoPooView().setVisible(true);
             }
         });
+    }
+    
+    public ImageIcon getImage(UnoCard card){
+        
+        ImageIcon image;
+        String location = "";
+        
+        if(card instanceof UnoNumber){
+            if("blue".equals(card.getColor())){
+                switch (((UnoNumber) card).getNumber()) {
+                    case 0:
+                        location = "images/Blue0.JPG";
+                        break;
+                    case 1:
+                        location = "images/Blue1.JPG";
+                        break;
+                    case 2:
+                        location = "images/Blue2.JPG";
+                        break;
+                    case 3:
+                        location = "images/Blue3.JPG";
+                        break;
+                    case 4:
+                        location = "images/Blue4.JPG";
+                        break;
+                    case 5:
+                        location = "images/Blue5.JPG";
+                        break;
+                    case 6:
+                        location = "images/Blue6.JPG";
+                        break;
+                    case 7:
+                        location = "images/Blue7.JPG";
+                        break;
+                    case 8:
+                        location = "images/Blue8.JPG";
+                        break;
+                    default:
+                        location = "images/Blue9.JPG";
+                        break;
+                }
+            } else if ("green".equals(card.getColor())){
+                switch (((UnoNumber) card).getNumber()) {
+                    case 0:
+                        location = "images/Green0.JPG";
+                        break;
+                    case 1:
+                        location = "images/Green1.JPG";
+                        break;
+                    case 2:
+                        location = "images/Green2.JPG";
+                        break;
+                    case 3:
+                        location = "images/Green3.JPG";
+                        break;
+                    case 4:
+                        location = "images/Green4.JPG";
+                        break;
+                    case 5:
+                        location = "images/Green5.JPG";
+                        break;
+                    case 6:
+                        location = "images/Green6.JPG";
+                        break;
+                    case 7:
+                        location = "images/Green7.JPG";
+                        break;
+                    case 8:
+                        location = "images/Green8.JPG";
+                        break;
+                    default:
+                        location = "images/Green9.JPG";
+                        break;
+                }
+            } else if ("red".equals(card.getColor())){
+                switch (((UnoNumber) card).getNumber()) {
+                    case 0:
+                        location = "images/Red0.png";
+                        break;
+                    case 1:
+                        location = "images/Red1.JPG";
+                        break;
+                    case 2:
+                        location = "images/Red2.JPG";
+                        break;
+                    case 3:
+                        location = "images/Red3.JPG";
+                        break;
+                    case 4:
+                        location = "images/Red4.JPG";
+                        break;
+                    case 5:
+                        location = "images/Red5.JPG";
+                        break;
+                    case 6:
+                        location = "images/Red6.JPG";
+                        break;
+                    case 7:
+                        location = "images/Red7.JPG";
+                        break;
+                    case 8:
+                        location = "images/Red8.JPG";
+                        break;
+                    default:
+                        location = "images/Red9.JPG";
+                        break;
+                }
+            } else if ("yellow".equals(card.getColor())){
+                switch (((UnoNumber) card).getNumber()) {
+                    case 0:
+                        location = "images/Yellow0.JPG";
+                        break;
+                    case 1:
+                        location = "images/Yellow1.JPG";
+                        break;
+                    case 2:
+                        location = "images/Yellow2.JPG";
+                        break;
+                    case 3:
+                        location = "images/Yellow3.JPG";
+                        break;
+                    case 4:
+                        location = "images/Yellow4.JPG";
+                        break;
+                    case 5:
+                        location = "images/Yellow5.JPG";
+                        break;
+                    case 6:
+                        location = "images/Yellow6.JPG";
+                        break;
+                    case 7:
+                        location = "images/Yellow7.JPG";
+                        break;
+                    case 8:
+                        location = "images/Yellow8.JPG";
+                        break;
+                    default:
+                        location = "images/Yellow9.JPG";
+                        break;
+                }
+            }
+        } else if (card instanceof UnoWild){
+            location = "images/Wild.JPG";
+        } else if (card instanceof UnoWildDraw){
+            location = "images/WildDraw4.JPG";
+        } else if (card instanceof UnoSkip){
+            if("blue".equals(card.getColor())){
+                location = "images/BlueSkip.JPG";
+            } else if ("green".equals(card.getColor())){
+                location = "images/GreenSkip.JPG";
+            } else if ("red".equals(card.getColor())){
+                location = "images/RedSkip.JPG";
+            } else {
+                location = "images/YellowSkip.JPG";
+            }
+        } else if (card instanceof UnoReverse){
+            if("blue".equals(card.getColor())){
+                location = "images/BlueReverse.JPG";
+            } else if ("green".equals(card.getColor())){
+                location = "images/GreenReverse.JPG";
+            } else if ("red".equals(card.getColor())){
+                location = "images/RedReverse.JPG";
+            } else {
+                location = "images/YellowReverse.JPG";
+            }
+        } else {
+            if("blue".equals(card.getColor())){
+                location = "images/BlueDraw2.JPG";
+            } else if ("green".equals(card.getColor())){
+                location = "images/GreenDraw2.JPG";
+            } else if ("red".equals(card.getColor())){
+                location = "images/RedDraw2.JPG";
+            } else {
+                location = "images/YellowDraw2.JPG";
+            }
+        }
+        image = new javax.swing.ImageIcon(getClass().getResource("/uno/" + location));
+        return image;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
