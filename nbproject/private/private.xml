@@ -3,18 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/218736/Documents/NetBeansProjects/UnoPoo/src/unopoo/Carta.java</file>
-            <file>file:/C:/Users/218736/Documents/NetBeansProjects/UnoPoo/src/unopoo/Bloqueia.java</file>
-            <file>file:/C:/Users/218736/Documents/NetBeansProjects/UnoPoo/src/unopoo/MaisQuatro.java</file>
-            <file>file:/C:/Users/218736/Documents/NetBeansProjects/UnoPoo/src/unopoo/MaoJogador.java</file>
-            <file>file:/C:/Users/218736/Documents/NetBeansProjects/UnoPoo/src/unopoo/Inverte.java</file>
-            <file>file:/C:/Users/218736/Documents/NetBeansProjects/UnoPoo/src/unopoo/Baralho.java</file>
-            <file>file:/C:/Users/218736/Documents/NetBeansProjects/UnoPoo/src/unopoo/MonteCompra.java</file>
-            <file>file:/C:/Users/218736/Documents/NetBeansProjects/UnoPoo/src/unopoo/Jogador.java</file>
-            <file>file:/C:/Users/218736/Documents/NetBeansProjects/UnoPoo/src/unopoo/Administrador.java</file>
-            <file>file:/C:/Users/218736/Documents/NetBeansProjects/UnoPoo/src/unopoo/Normais.java</file>
-            <file>file:/C:/Users/218736/Documents/NetBeansProjects/UnoPoo/src/unopoo/MaisDois.java</file>
-            <file>file:/C:/Users/218736/Documents/NetBeansProjects/UnoPoo/src/unopoo/UnoPoo.java</file>
+            <file>file:/C:/Users/Thaís/Documents/NetBeansProjects/UnoPoo/src/unopoo/Inverte.java</file>
+            <file>file:/C:/Users/Thaís/Documents/NetBeansProjects/UnoPoo/src/unopoo/Bloqueia.java</file>
+            <file>file:/C:/Users/Thaís/Documents/NetBeansProjects/UnoPoo/src/unopoo/MaisDois.java</file>
+            <file>file:/C:/Users/Thaís/Documents/NetBeansProjects/UnoPoo/src/unopoo/Carta.java</file>
+            <file>file:/C:/Users/Thaís/Documents/NetBeansProjects/UnoPoo/src/unopoo/Jogador.java</file>
+            <file>file:/C:/Users/Thaís/Documents/NetBeansProjects/UnoPoo/src/unopoo/Baralho.java</file>
+            <file>file:/C:/Users/Thaís/Documents/NetBeansProjects/UnoPoo/src/unopoo/MaisQuatro.java</file>
+            <file>file:/C:/Users/Thaís/Documents/NetBeansProjects/UnoPoo/src/unopoo/PilhaDescarte.java</file>
+            <file>file:/C:/Users/Thaís/Documents/NetBeansProjects/UnoPoo/src/unopoo/Partida.java</file>
+            <file>file:/C:/Users/Thaís/Documents/NetBeansProjects/UnoPoo/src/unopoo/Normais.java</file>
         </group>
     </open-files>
 </project-private>

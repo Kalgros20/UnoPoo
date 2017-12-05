@@ -5,10 +5,14 @@
  */
 package unopoo;
 
+import java.util.Stack;
+
 /**
  *
  * @author 218736
  */
 public class MonteCompra {
-    
+    public MonteCompra() {
+        Stack monteCompra = new Stack();
+    }    
 }

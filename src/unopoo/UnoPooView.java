@@ -5,15 +5,20 @@
  */
 package unopoo;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  *
  * @author Thaís
  */
 public class UnoPooView extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form UnoPooView
      */
+    JLabel[] labelArray;
+    
     public UnoPooView() {
         initComponents();
     }
@@ -228,6 +233,203 @@ public class UnoPooView extends javax.swing.JFrame {
                 new UnoPooView().setVisible(true);
             }
         });
+    }
+    public void setLabelArray(){
+      
+        labelArray[0] = jLabel1;
+        labelArray[1] = jLabel2;
+        labelArray[2] = jLabel3;
+        labelArray[3] = jLabel4;
+        labelArray[4] = jLabel5;
+        labelArray[5] = jLabel6;
+        labelArray[6] = jLabel7;
+        labelArray[7] = jLabel8;
+        labelArray[8] = jLabel9;
+        labelArray[9] = jLabel10;
+        labelArray[10] = jLabel11;
+        labelArray[11] = jLabel12;
+        labelArray[12] = jLabel13;
+        labelArray[13] = jLabel14;
+        labelArray[14] = jLabel15;
+        
+    }
+    
+    public ImageIcon getImage(Carta carta){
+        
+        ImageIcon image;
+        String location = "";
+        
+        if(carta.tipo.equals("normal")){
+            if("Azul".equals(carta.getCor())){
+                switch (carta.valor){
+                    case "0":
+                        location = "images/Blue0.JPG";
+                        break;
+                    case "1":
+                        location = "images/Blue1.JPG";
+                        break;
+                    case "2":
+                        location = "images/Blue2.JPG";
+                        break;
+                    case "3":
+                        location = "images/Blue3.JPG";
+                        break;
+                    case "4":
+                        location = "images/Blue4.JPG";
+                        break;
+                    case "5":
+                        location = "images/Blue5.JPG";
+                        break;
+                    case "6":
+                        location = "images/Blue6.JPG";
+                        break;
+                    case "7":
+                        location = "images/Blue7.JPG";
+                        break;
+                    case "8":
+                        location = "images/Blue8.JPG";
+                        break;
+                    default:
+                        location = "images/Blue9.JPG";
+                        break;
+                }
+            } else if("Verde".equals(carta.getCor())){
+                switch (carta.valor){
+                    case "0":
+                        location = "images/Green0.JPG";
+                        break;
+                    case "1":
+                        location = "images/Green1.JPG";
+                        break;
+                    case "2":
+                        location = "images/Green2.JPG";
+                        break;
+                    case "3":
+                        location = "images/Green3.JPG";
+                        break;
+                    case "4":
+                        location = "images/Green4.JPG";
+                        break;
+                    case "5":
+                        location = "images/Green5.JPG";
+                        break;
+                    case "6":
+                        location = "images/Green6.JPG";
+                        break;
+                    case "7":
+                        location = "images/Green7.JPG";
+                        break;
+                    case "8":
+                        location = "images/Green8.JPG";
+                        break;
+                    default:
+                        location = "images/Green9.JPG";
+                        break;
+                }
+            } else if("Vermelho".equals(carta.getCor())){
+                switch (carta.valor){
+                    case "0":
+                        location = "images/Red0.png";
+                        break;
+                    case "1":
+                        location = "images/Red1.JPG";
+                        break;
+                    case "2":
+                        location = "images/Red2.JPG";
+                        break;
+                    case "3":
+                        location = "images/Red3.JPG";
+                        break;
+                    case "4":
+                        location = "images/Red4.JPG";
+                        break;
+                    case "5":
+                        location = "images/Red5.JPG";
+                        break;
+                    case "6":
+                        location = "images/Red6.JPG";
+                        break;
+                    case "7":
+                        location = "images/Red7.JPG";
+                        break;
+                    case "8":
+                        location = "images/Red8.JPG";
+                        break;
+                    default:
+                        location = "images/Red9.JPG";
+                        break;
+                }
+            } else if("Amarelo".equals(carta.getCor())){
+                switch (carta.valor){
+                    case "0":
+                        location = "images/Yellow0.JPG";
+                        break;
+                    case "1":
+                        location = "images/Yellow1.JPG";
+                        break;
+                    case "2":
+                        location = "images/Yellow2.JPG";
+                        break;
+                    case "3":
+                        location = "images/Yellow3.JPG";
+                        break;
+                    case "4":
+                        location = "images/Yellow4.JPG";
+                        break;
+                    case "5":
+                        location = "images/Yellow5.JPG";
+                        break;
+                    case "6":
+                        location = "images/Yellow6.JPG";
+                        break;
+                    case "7":
+                        location = "images/Yellow7.JPG";
+                        break;
+                    case "8":
+                        location = "images/Yellow8.JPG";
+                        break;
+                    default:
+                        location = "images/Yellow9.JPG";
+                        break;
+                }
+            }
+        } else if(carta.valor.equals("coringa")){
+            location = "images/Wild.JPG";
+         } else if(carta.valor.equals("MaisQuatro")){
+            location = "images/WildDraw4.JPG";
+         } else if(carta.valor.equals("Bloqueia")){
+            if("Azul".equals(carta.getCor())){
+                location = "images/BlueSkip.JPG";
+            } else if ("Verde".equals(carta.getCor())){
+                location = "images/GreenSkip.JPG";
+            } else if ("Vermelho".equals(carta.getCor())){
+                location = "images/RedSkip.JPG";
+            } else {
+                location = "images/YellowSkip.JPG";
+            }
+        } else if (carta.valor.equals("Reverte")){
+            if("Azul".equals(carta.getCor())){
+                location = "images/BlueReverse.JPG";
+            } else if ("Verde".equals(carta.getCor())){
+                location = "images/GreenReverse.JPG";
+            } else if ("Vermelho".equals(carta.getCor())){
+                location = "images/RedReverse.JPG";
+            } else {
+                location = "images/YellowReverse.JPG";
+            }
+        } else {
+            if("Azul".equals(carta.getCor())){
+                location = "images/BlueDraw2.JPG";
+            } else if ("Verde".equals(carta.getCor())){
+                location = "images/GreenDraw2.JPG";
+            } else if ("Vermelho".equals(carta.getCor())){
+                location = "images/RedDraw2.JPG";
+            } else {
+                location = "images/YellowDraw2.JPG";
+            }
+        }
+        image = new javax.swing.ImageIcon(getClass().getResource("/UnoPoo/" + location));
+        return image;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

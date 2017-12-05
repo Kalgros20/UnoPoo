@@ -22,7 +22,6 @@ public class Carta {
         this.cor = cor;
     }
 
-
     String valor;
     String tipo;
     String cor;
