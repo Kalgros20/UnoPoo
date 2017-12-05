@@ -13,9 +13,12 @@ public class Partida {
    public void comecarJogo(){
        Jogador jogador1 = new Jogador();
        Jogador jogador2 =  new Jogador();
-       
        Baralho baralho = new Baralho();
+       PilhaDescarte descarte = new PilhaDescarte();
+              
        baralho.embaralhar();
        baralho.distribuirCartas(jogador1,jogador2);
+       descarte = baralho.discartaPrimeiraCarta();
+       
    }
 }
