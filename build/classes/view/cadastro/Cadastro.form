@@ -26,44 +26,49 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="0" pref="59" max="32767" attributes="0"/>
                       <Component id="confirma" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="66" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="volta" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="senha" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="nome" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="nome" min="-2" pref="40" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="campoNome1" min="-2" pref="155" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="nome1" min="-2" pref="40" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="campoNome2" min="-2" pref="155" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="campoNome" max="32767" attributes="0"/>
-                          <Component id="campoSenha" pref="148" max="32767" attributes="0"/>
-                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="nome" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="nome" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="campoNome1" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="senha" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="campoSenha" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="nome1" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="campoNome2" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="86" max="32767" attributes="0"/>
+              <EmptySpace pref="19" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="confirma" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="volta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="confirma" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                  <Component id="volta" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
           </Group>
@@ -73,31 +78,21 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="nome">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nome"/>
+        <Property name="text" type="java.lang.String" value="Player 1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="senha">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Senha"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="campoNome">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="nome"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="campoNome2">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoNomeActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoNome2ActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="campoSenha">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="senha"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="confirma">
       <Properties>
         <Property name="text" type="java.lang.String" value="Confirmar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confirmaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="volta">
       <Properties>
@@ -105,6 +100,16 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="voltaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="nome1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Player 2"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="campoNome1">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoNome1ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

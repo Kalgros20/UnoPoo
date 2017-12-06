@@ -7,6 +7,7 @@ package unopoo;
 
 import java.sql.Connection; // conexão SQL para Java;
 import java.sql.DriverManager;// driver de conexão SQL para Java;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;// classe para tratamento de exceções
 
 /**
@@ -15,13 +16,13 @@ import java.sql.SQLException;// classe para tratamento de exceções
  */
 public class ConnectionFactory {
 
+
     public Connection getConnection() {
         try {
             return DriverManager.getConnection(
-                    "jdbc:mysql://localhost/banco", "root", "");
+                    "jdbc:mysql://localhost/Uno", "root", "");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-
 }

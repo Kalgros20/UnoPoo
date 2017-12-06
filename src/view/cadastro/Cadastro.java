@@ -1,7 +1,15 @@
 package view.cadastro;
 
-import view.menu.MenuPrincipal;
 
+import java.sql.PreparedStatement;
+import view.menu.MenuPrincipal;
+import unopoo.ConnectionFactory;
+import java.sql.Connection; // conexão SQL para Java;
+import java.sql.DriverManager;// driver de conexão SQL para Java;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;// classe para tratamento de exceções
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author KENJI
@@ -20,33 +28,41 @@ public class Cadastro extends javax.swing.JFrame {
     private void initComponents() {
 
         nome = new javax.swing.JLabel();
-        senha = new javax.swing.JLabel();
-        campoNome = new javax.swing.JTextField();
-        campoSenha = new javax.swing.JTextField();
+        campoNome2 = new javax.swing.JTextField();
         confirma = new javax.swing.JButton();
         volta = new javax.swing.JButton();
+        nome1 = new javax.swing.JLabel();
+        campoNome1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        nome.setText("Nome");
+        nome.setText("Player 1");
 
-        senha.setText("Senha");
-
-        campoNome.setText("nome");
-        campoNome.addActionListener(new java.awt.event.ActionListener() {
+        campoNome2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoNomeActionPerformed(evt);
+                campoNome2ActionPerformed(evt);
             }
         });
 
-        campoSenha.setText("senha");
-
         confirma.setText("Confirmar");
+        confirma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmaActionPerformed(evt);
+            }
+        });
 
         volta.setText("Voltar");
         volta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 voltaActionPerformed(evt);
+            }
+        });
+
+        nome1.setText("Player 2");
+
+        campoNome1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoNome1ActionPerformed(evt);
             }
         });
 
@@ -58,34 +74,38 @@ public class Cadastro extends javax.swing.JFrame {
                 .addGap(83, 83, 83)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 59, Short.MAX_VALUE)
                         .addComponent(confirma)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                        .addComponent(volta))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(senha)
-                            .addComponent(nome))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(campoNome)
-                            .addComponent(campoSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE))))
-                .addGap(111, 111, 111))
+                        .addGap(18, 18, 18)
+                        .addComponent(volta)
+                        .addGap(111, 111, 111))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(campoNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(nome1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(campoNome2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(65, 65, 65)
+                .addGap(102, 102, 102)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nome)
-                    .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(senha)
-                    .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                    .addComponent(nome1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoNome2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(confirma)
-                    .addComponent(volta))
+                    .addComponent(confirma, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(volta, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(68, 68, 68))
         );
 
@@ -96,9 +116,10 @@ public class Cadastro extends javax.swing.JFrame {
     
     
     
-    private void campoNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoNomeActionPerformed
+    private void campoNome2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNome2ActionPerformed
+        
+  
+    }//GEN-LAST:event_campoNome2ActionPerformed
 
     private void voltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltaActionPerformed
 
@@ -106,6 +127,26 @@ public class Cadastro extends javax.swing.JFrame {
         this.telaAnterior.setVisible(true);
         
     }//GEN-LAST:event_voltaActionPerformed
+
+    private void confirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmaActionPerformed
+            Connection conexao = new ConnectionFactory().getConnection();
+        
+            String sql = "Insert into usuario (Nome) value (?)";
+            String sql1 = "Insert into usuario (Nome) value (?)";            
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setString(1,campoNome2.getText());
+            stmt.setString(1,campoNome1.getText());
+            stmt.execute();
+            stmt.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Cadastro.class.getName()).log(Level.SEVERE, null, ex);
+        }  // TODO add your handling code here:
+    }//GEN-LAST:event_confirmaActionPerformed
+
+    private void campoNome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNome1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoNome1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,11 +183,11 @@ public class Cadastro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField campoNome;
-    private javax.swing.JTextField campoSenha;
+    private javax.swing.JTextField campoNome1;
+    private javax.swing.JTextField campoNome2;
     private javax.swing.JButton confirma;
     private javax.swing.JLabel nome;
-    private javax.swing.JLabel senha;
+    private javax.swing.JLabel nome1;
     private javax.swing.JButton volta;
     // End of variables declaration//GEN-END:variables
 }
