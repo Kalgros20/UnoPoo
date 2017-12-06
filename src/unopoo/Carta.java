@@ -136,7 +136,7 @@ public class Carta {
         
         }
         
-        imagem = new javax.swing.ImageIcon(getClass().getResource("/uno/" + location.toString()));
+        imagem = new javax.swing.ImageIcon(getClass().getResource("/unopoo/" + location.toString()));
         return imagem;
     }
     

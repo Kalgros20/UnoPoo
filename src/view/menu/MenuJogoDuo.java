@@ -55,6 +55,7 @@ public class MenuJogoDuo extends javax.swing.JFrame {
         botaoUYNO = new javax.swing.JButton();
         maoJogador1 = new javax.swing.JLabel();
         maoJogador2 = new javax.swing.JLabel();
+        jogadorAtual = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -414,10 +415,20 @@ public class MenuJogoDuo extends javax.swing.JFrame {
         maoJogador2.setMinimumSize(new java.awt.Dimension(200, 50));
         maoJogador2.setPreferredSize(new java.awt.Dimension(200, 50));
 
+        jogadorAtual.setBackground(new java.awt.Color(102, 0, 102));
+        jogadorAtual.setForeground(new java.awt.Color(204, 0, 204));
+        jogadorAtual.setMaximumSize(new java.awt.Dimension(200, 50));
+        jogadorAtual.setMinimumSize(new java.awt.Dimension(200, 50));
+        jogadorAtual.setPreferredSize(new java.awt.Dimension(200, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(180, 180, 180)
+                .addComponent(maoJogadorAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -431,12 +442,9 @@ public class MenuJogoDuo extends javax.swing.JFrame {
                         .addComponent(discarte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(164, 164, 164)
                         .addComponent(botaoUYNO, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 20, Short.MAX_VALUE)))
+                        .addGap(0, 20, Short.MAX_VALUE))
+                    .addComponent(jogadorAtual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addComponent(maoJogadorAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -456,7 +464,9 @@ public class MenuJogoDuo extends javax.swing.JFrame {
                             .addGap(33, 33, 33)
                             .addComponent(botaoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(discarte, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jogadorAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
                 .addComponent(maoJogadorAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -596,6 +606,10 @@ public class MenuJogoDuo extends javax.swing.JFrame {
         maoJogador2.setText("Jogador 2 :  " + tamanhoMao + " carta(s)");
     }
     
+    public void setJogadorAtual(int jogador){
+        jogadorAtual.setText("Jogador Atual :  " + jogador);
+    }
+    
     public void setLabelArray(){
         labelArray[0] = jLabel1;
         labelArray[1] = jLabel2;
@@ -681,6 +695,7 @@ public class MenuJogoDuo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jogadorAtual;
     private javax.swing.JLabel maoJogador1;
     private javax.swing.JLabel maoJogador2;
     private javax.swing.JPanel maoJogadorAtual;

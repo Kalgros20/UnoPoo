@@ -5,6 +5,7 @@
  */
 package unopoo;
 
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import view.menu.MenuJogoDuo;
 
@@ -33,11 +34,11 @@ public class Partida {
        descarte.Cartas.push(baralho.primeiraCarta());
        jogadorAtual = jogador1;
        
-       try {
+       //try {
            atualizaTamanhoMao();
-       } catch (Exception e) {
-           System.out.println("unopoo.Partida.comecarJogo()" + e.toString());
-       }
+       //} catch (Exception e) {
+        //   System.out.println("unopoo.Partida.comecarJogo()" + e.toString());
+       //}
        
    }
    
@@ -98,31 +99,25 @@ public class Partida {
    public void atualizaTamanhoMao(){
         view.setTamanhoMaoJogador1(jogador1.maoJogador.size());
         view.setTamanhoMaoJogador2(jogador2.maoJogador.size());
+        view.setJogadorAtual(jogadorAtual.equals(jogador1) ? 1 : 2);
+        try {
+           mostraMaoJogadorAtual();
+       } catch (Exception e) {
+       }
         mostraMaoJogadorAtual();
     }
    
     public void mostraMaoJogadorAtual(){
         
         for (int i = 0; i < jogadorAtual.maoJogador.size(); i++) {
+            view.setLabelArray();
             
-             try {
-                jogador1.maoJogador.get(i).getImage();
-            } catch (Exception e) {
-                System.out.println("getImage jogador 1 " + e.getMessage());
-            }
-            
-            try {
-                jogadorAtual.maoJogador.get(i).getImage();
-            } catch (Exception e) {
-                System.out.println("getImage " + e.getMessage());
-            }
-            
-            //view.labelArray[i].setIcon(jogadorAtual.maoJogador.get(i).getImage());
-            //view.labelArray[i].setVisible(true);
+            view.labelArray[i].setIcon(jogadorAtual.maoJogador.get(i).getImage());
+            view.labelArray[i].setVisible(true);
            
         }
         
-        for (int i = jogadorAtual.maoJogador.size(); i < 22; i++){
+        for (int i = jogadorAtual.maoJogador.size(); i < 21; i++){
             view.labelArray[i].setVisible(false);
         }
     }
