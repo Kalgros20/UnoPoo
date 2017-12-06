@@ -7,6 +7,7 @@ package unopoo;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import jdk.nashorn.internal.objects.NativeArray;
 import view.menu.MenuJogoDuo;
 
 /**
@@ -20,6 +21,7 @@ public class Partida {
     public Jogador          jogadorAtual;
     public PilhaDescarte    descarte       =   new PilhaDescarte();
     public Baralho          baralho        =   new Baralho(descarte);
+    public Integer          cartaComprar   =   new Integer(0);
     
     public MenuJogoDuo      view;
     
@@ -84,7 +86,9 @@ public class Partida {
            if(validaDescarte(cartaSelecionada)){
                descarte.Cartas.push(cartaSelecionada);
                jogadorAtual.maoJogador.remove(carta);
+/*
                if(jogadorAtual.equals(jogador1)){
+
                    for (int i = 0; i < 2; i++) {
                        jogador2.adicionaCarta(baralho.Compra());
                    }
@@ -93,6 +97,8 @@ public class Partida {
                        jogador1.adicionaCarta(baralho.Compra());
                    }
                }
+*/
+               cartaComprar += 2;
                passaTurno();
                return;
            };
@@ -132,9 +138,36 @@ public class Partida {
        
    }
    
+    public void descartaCartaMaisDois(int carta){
+       Carta cartaSelecionada = jogadorAtual.maoJogador.get(carta);
+       
+       if(cartaSelecionada.getValor().equals("MaisDois")){
+            descarte.Cartas.push(cartaSelecionada);
+            jogadorAtual.maoJogador.remove(carta);
+            cartaComprar += 2;
+            passaTurno();
+           
+       }
+    }
+   
    public void comecaTurno(){
        if(validaFim()){
            return;
+       }
+       if(cartaComprar > 0){
+       Boolean comprar = true;
+          for(Carta carta : jogadorAtual.maoJogador){
+              if(carta.valor.equals("MaisDois")){
+                  comprar = false;
+              }
+          }
+        if(comprar){
+            for (int i = 0; i < cartaComprar; i++) {
+                       jogadorAtual.adicionaCarta(baralho.Compra());
+            }
+            cartaComprar = 0;
+        }
+       
        }
         atualizaTamanhoMao();
         mostraMaoJogadorAtual();
