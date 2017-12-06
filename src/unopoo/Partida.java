@@ -15,14 +15,15 @@ import view.menu.MenuJogoDuo;
  */
 public class Partida {
     
-    Jogador          jogador1       =   new Jogador();
-    Jogador          jogador2       =   new Jogador();
-    Jogador          jogadorAtual;
-    PilhaDescarte    descarte       =   new PilhaDescarte();
-    Baralho          baralho        =   new Baralho(descarte);
+    public Jogador          jogador1       =   new Jogador();
+    public Jogador          jogador2       =   new Jogador();
+    public Jogador          jogadorAtual;
+    public PilhaDescarte    descarte       =   new PilhaDescarte();
+    public Baralho          baralho        =   new Baralho(descarte);
     
-    MenuJogoDuo      view;
-   
+    public MenuJogoDuo      view;
+    
+    
     public Partida(MenuJogoDuo tela){
         this.view = tela;
     }
@@ -33,13 +34,8 @@ public class Partida {
        baralho.distribuirCartas(jogador1,jogador2);
        descarte.Cartas.push(baralho.primeiraCarta());
        jogadorAtual = jogador1;
-       
-       //try {
-           atualizaTamanhoMao();
-       //} catch (Exception e) {
-        //   System.out.println("unopoo.Partida.comecarJogo()" + e.toString());
-       //}
-       
+       atualizaTamanhoMao();
+       view.retornaBotaoCompra();
    }
    
    public Boolean validaUNO(){
@@ -59,13 +55,87 @@ public class Partida {
                descarte.Cartas.push(cartaSelecionada);
                jogadorAtual.maoJogador.remove(carta);
                passaTurno();
+               return;
            };
-           
-       
        }
+       
+       //Bloqueia
+       if(cartaSelecionada.getValor().equals("Bloqueia")){
+           if(validaDescarte(cartaSelecionada)){
+               descarte.Cartas.push(cartaSelecionada);
+               jogadorAtual.maoJogador.remove(carta);
+               comecaTurno();
+               return;
+           };
+       }
+       
+       //Inverte
+       if(cartaSelecionada.getValor().equals("Inverte")){
+           if(validaDescarte(cartaSelecionada)){
+               descarte.Cartas.push(cartaSelecionada);
+               jogadorAtual.maoJogador.remove(carta);
+               comecaTurno();
+               return;
+           };
+       }
+       
+       //Mais Dois
+       if(cartaSelecionada.getValor().equals("MaisDois")){
+           if(validaDescarte(cartaSelecionada)){
+               descarte.Cartas.push(cartaSelecionada);
+               jogadorAtual.maoJogador.remove(carta);
+               if(jogadorAtual.equals(jogador1)){
+                   for (int i = 0; i < 2; i++) {
+                       jogador2.adicionaCarta(baralho.Compra());
+                   }
+               }else{
+                   for (int i = 0; i < 2; i++) {
+                       jogador1.adicionaCarta(baralho.Compra());
+                   }
+               }
+               passaTurno();
+               return;
+           };
+       }
+       
+       //Mais Quatro
+       if(cartaSelecionada.getValor().equals("MaisQuatro")){
+           
+            cartaSelecionada.cor = view.escolhaCor();
+            descarte.Cartas.push(cartaSelecionada);
+            jogadorAtual.maoJogador.remove(carta);
+            if(jogadorAtual.equals(jogador1)){
+                for (int i = 0; i < 4; i++) {
+                    jogador2.adicionaCarta(baralho.Compra());
+                }
+            }else{
+                for (int i = 0; i < 4; i++) {
+                    jogador1.adicionaCarta(baralho.Compra());
+                }
+            }
+            passaTurno();
+            return;
+           
+       }
+       
+       //Coringa
+       if(cartaSelecionada.getValor().equals("Coringa")){
+           
+            cartaSelecionada.cor = view.escolhaCor();
+            descarte.Cartas.push(cartaSelecionada);
+            jogadorAtual.maoJogador.remove(carta);
+            
+            passaTurno();
+            return;
+           
+       }
+       
    }
    
    public void comecaTurno(){
+       if(validaFim()){
+           return;
+       }
         atualizaTamanhoMao();
         mostraMaoJogadorAtual();
         view.retornaBotaoCompra();
@@ -82,6 +152,9 @@ public class Partida {
    }
    
    public void passaTurno(){
+       if(validaFim()){
+           return;
+       }
        if(jogadorAtual.equals(jogador1)){
            jogadorAtual = jogador2;
            comecaTurno();
@@ -91,19 +164,25 @@ public class Partida {
        }
    }
    
+   public Boolean validaFim(){
+       if(jogadorAtual.uno &&
+          jogadorAtual.maoJogador.isEmpty()){
+       view.acabou();
+       return true;
+       }
+       return false;
+   }
+   
    public void botaoComprar(){
        jogadorAtual.adicionaCarta(baralho.Compra());
        view.apagaBotaoCompra();
+       atualizaTamanhoMao();
    }
    
    public void atualizaTamanhoMao(){
         view.setTamanhoMaoJogador1(jogador1.maoJogador.size());
         view.setTamanhoMaoJogador2(jogador2.maoJogador.size());
         view.setJogadorAtual(jogadorAtual.equals(jogador1) ? 1 : 2);
-        try {
-           mostraMaoJogadorAtual();
-       } catch (Exception e) {
-       }
         mostraMaoJogadorAtual();
     }
    
