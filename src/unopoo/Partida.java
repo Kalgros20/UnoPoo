@@ -120,5 +120,8 @@ public class Partida {
         for (int i = jogadorAtual.maoJogador.size(); i < 21; i++){
             view.labelArray[i].setVisible(false);
         }
+        
+        Carta topoMonte = (Carta) descarte.Cartas.peek();
+        view.getTopoDescarte().setIcon(topoMonte.getImage());
     }
 }

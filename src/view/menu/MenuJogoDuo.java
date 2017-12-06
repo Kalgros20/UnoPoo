@@ -49,7 +49,7 @@ public class MenuJogoDuo extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         discarte = new javax.swing.JPanel();
-        topOfDiscardPile = new javax.swing.JLabel();
+        topoDescarte = new javax.swing.JLabel();
         botaoPassa = new javax.swing.JButton();
         botaoCompra = new javax.swing.JButton();
         botaoUYNO = new javax.swing.JButton();
@@ -356,10 +356,10 @@ public class MenuJogoDuo extends javax.swing.JFrame {
                 .addGap(23, 23, 23))
         );
 
-        topOfDiscardPile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/unopoo/images/Red0.png"))); // NOI18N
-        topOfDiscardPile.setMaximumSize(new java.awt.Dimension(40, 63));
-        topOfDiscardPile.setMinimumSize(new java.awt.Dimension(40, 63));
-        topOfDiscardPile.setPreferredSize(new java.awt.Dimension(40, 63));
+        topoDescarte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/unopoo/images/Red0.png"))); // NOI18N
+        topoDescarte.setMaximumSize(new java.awt.Dimension(40, 63));
+        topoDescarte.setMinimumSize(new java.awt.Dimension(40, 63));
+        topoDescarte.setPreferredSize(new java.awt.Dimension(40, 63));
 
         javax.swing.GroupLayout discarteLayout = new javax.swing.GroupLayout(discarte);
         discarte.setLayout(discarteLayout);
@@ -369,7 +369,7 @@ public class MenuJogoDuo extends javax.swing.JFrame {
             .addGroup(discarteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(discarteLayout.createSequentialGroup()
                     .addGap(58, 58, 58)
-                    .addComponent(topOfDiscardPile, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(topoDescarte, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(51, Short.MAX_VALUE)))
         );
         discarteLayout.setVerticalGroup(
@@ -378,7 +378,7 @@ public class MenuJogoDuo extends javax.swing.JFrame {
             .addGroup(discarteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(discarteLayout.createSequentialGroup()
                     .addGap(50, 50, 50)
-                    .addComponent(topOfDiscardPile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(topoDescarte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(36, Short.MAX_VALUE)))
         );
 
@@ -610,6 +610,10 @@ public class MenuJogoDuo extends javax.swing.JFrame {
         jogadorAtual.setText("Jogador Atual :  " + jogador);
     }
     
+    public JLabel getTopoDescarte(){
+        return topoDescarte;
+    }
+    
     public void setLabelArray(){
         labelArray[0] = jLabel1;
         labelArray[1] = jLabel2;
@@ -699,7 +703,7 @@ public class MenuJogoDuo extends javax.swing.JFrame {
     private javax.swing.JLabel maoJogador1;
     private javax.swing.JLabel maoJogador2;
     private javax.swing.JPanel maoJogadorAtual;
-    private javax.swing.JLabel topOfDiscardPile;
+    private javax.swing.JLabel topoDescarte;
     // End of variables declaration//GEN-END:variables
 }
 
