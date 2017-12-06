@@ -484,50 +484,86 @@ public class MenuJogoDuo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(1);
+        }else
         partida.descartaCarta(1);
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(2);
+        }else
         partida.descartaCarta(2);
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(4);
+        }else
         partida.descartaCarta(4);
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(5);
+        }else
         partida.descartaCarta(5);
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(6);
+        }else
         partida.descartaCarta(6);
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(7);
+        }else
         partida.descartaCarta(7);
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(8);
+        }else
         partida.descartaCarta(8);
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(9);
+        }else
         partida.descartaCarta(9);
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+        if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(12);
+        }else
         partida.descartaCarta(12);
     }//GEN-LAST:event_jLabel13MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(3);
+        }else
         partida.descartaCarta(3);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+        if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(13);
+        }else
         partida.descartaCarta(13);
     }//GEN-LAST:event_jLabel14MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(0);
+        }else
         partida.descartaCarta(0);
     }//GEN-LAST:event_jLabel1MouseClicked
 
@@ -559,39 +595,66 @@ public class MenuJogoDuo extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoUYNOActionPerformed
 
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+        if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(14);
+        }else
         partida.descartaCarta(14);
     }//GEN-LAST:event_jLabel15MouseClicked
 
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
-         partida.descartaCarta(15);
+         if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(15);
+        }else
+        partida.descartaCarta(15);
     }//GEN-LAST:event_jLabel16MouseClicked
 
     private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
-         partida.descartaCarta(16);
+         if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(16);
+        }else
+        partida.descartaCarta(16);
     }//GEN-LAST:event_jLabel17MouseClicked
 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
-         partida.descartaCarta(17);
+         if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(17);
+        }else
+        partida.descartaCarta(17);
     }//GEN-LAST:event_jLabel18MouseClicked
 
     private void jLabel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel19MouseClicked
-         partida.descartaCarta(18);
+         if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(18);
+        }else
+        partida.descartaCarta(18);
     }//GEN-LAST:event_jLabel19MouseClicked
 
     private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
-         partida.descartaCarta(19);
+         if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(19);
+        }else
+        partida.descartaCarta(19);
     }//GEN-LAST:event_jLabel20MouseClicked
 
     private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
-         partida.descartaCarta(20);
+         if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(20);
+        }else
+        partida.descartaCarta(20);
     }//GEN-LAST:event_jLabel21MouseClicked
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(10);
+        }else
         partida.descartaCarta(10);
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
-         partida.descartaCarta(11);
+         if(partida.cartaComprar > 0){
+            partida.descartaCartaMaisDois(11);
+        }else
+        partida.descartaCarta(11);
     }//GEN-LAST:event_jLabel12MouseClicked
 
     /*
