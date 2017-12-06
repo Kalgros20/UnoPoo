@@ -24,13 +24,13 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Component id="jogar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="criarConta" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="sair" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="99" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="criarConta" min="-2" pref="173" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="sair" min="-2" pref="63" max="-2" attributes="0"/>
+              <EmptySpace pref="51" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -39,11 +39,11 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jogar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="criarConta" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="sair" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jogar" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="criarConta" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="sair" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="138" max="32767" attributes="0"/>
+              <EmptySpace pref="130" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -59,7 +59,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="criarConta">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Criar Conta"/>
+        <Property name="text" type="java.lang.String" value="Nome dos Jogadores"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="criarContaActionPerformed"/>

@@ -2,7 +2,7 @@ import view.menu.MenuPrincipal;
 
 /**
  *
- * @author 218736
+ * @author Carlysson
  */
 public class UnoPoo {
 
