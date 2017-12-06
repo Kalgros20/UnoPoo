@@ -11,17 +11,17 @@ import java.util.ArrayList;
  *
  * @author 218736
  */
-public class Jogador 
-{
-    private String Nome;
-    private int pontuacao;
-    ArrayList<Carta> maoJogador = new ArrayList<Carta>();
+public class Jogador {
+    
+    private             String              nome;
+    private             int                 pontuacao;
+    public              ArrayList<Carta>    maoJogador = new ArrayList<Carta>();
 
-    public void adicionaCarta(Carta carta) {
+    public void adicionaCarta(Carta carta){
         maoJogador.add(carta);
     }
 
-    public void removeJogador(Carta carta) {
+    public void removeCarta(Carta carta) {
          maoJogador.remove(carta);
     }
     

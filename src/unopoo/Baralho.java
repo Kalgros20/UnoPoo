@@ -13,47 +13,34 @@ import java.util.List;
  * @author 218736
  */
 public class Baralho {
+    
+    private final   int              numeroDeCartas = 76;
+    private         ArrayList<Carta> baralho        = new ArrayList<Carta>();
 
     public Baralho() {
         criaCartasNormais();
         criaCartasEspeciais();
     }
 
-    private ArrayList<Carta> baralho = new ArrayList<Carta>();
-    private final int  numeroDeCartas = 76;
-    
-    
-
-    public void criaCartasNormais() {
+    private void criaCartasNormais() {
         
-        for (int i = 0; i < 10; i++) {
-            baralho.add(new Carta(String.valueOf(i),"normal","Azul"));
-        }
-        for (int i = 0; i < 10; i++) {
-            baralho.add(new Carta(String.valueOf(i),"normal","Amarelo"));
-        }
-        for (int i = 0; i < 10; i++) {
-            baralho.add(new Carta(String.valueOf(i),"normal","Vermelho"));
-        }
-        for (int i = 0; i < 10; i++) {
-            baralho.add(new Carta(String.valueOf(i),"normal","Verde"));
-        }
-        
-        for (int i = 1; i < 10; i++) {
-            baralho.add(new Carta(String.valueOf(i),"normal","Azul"));
-        }
-        for (int i = 1; i < 10; i++) {
-            baralho.add(new Carta(String.valueOf(i),"normal","Amarelo"));
-        }
-        for (int i = 1; i < 10; i++) {
-            baralho.add(new Carta(String.valueOf(i),"normal","Vermelho"));
-        }
-        for (int i = 1; i < 10; i++) {
-            baralho.add(new Carta(String.valueOf(i),"normal","Verde"));
+        for (int y = 0; y < 2 ; y++){
+            for (int i = 0; i < 10; i++) {
+                baralho.add(new Carta(String.valueOf(i),"normal","Azul"));
+            }
+            for (int i = 0; i < 10; i++) {
+                baralho.add(new Carta(String.valueOf(i),"normal","Amarelo"));
+            }
+            for (int i = 0; i < 10; i++) {
+                baralho.add(new Carta(String.valueOf(i),"normal","Vermelho"));
+            }
+            for (int i = 0; i < 10; i++) {
+                baralho.add(new Carta(String.valueOf(i),"normal","Verde"));
+            }
         }
     }
     
-    public ArrayList<Carta> criaCartasEspeciais(){
+    private void criaCartasEspeciais(){
          for (int i = 0; i < 2; i++) {
             baralho.add(new Carta("Bloqueia","especial","Azul"));
             baralho.add(new Carta("Bloqueia","especial","Verde"));
@@ -76,7 +63,6 @@ public class Baralho {
         for (int i = 0; i < 4; i++) {
             baralho.add(new Carta("Coringa","especial",""));
         }       
-            return baralho;
     }
 
     public void embaralhar() {

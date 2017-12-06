@@ -5,20 +5,32 @@
  */
 package unopoo;
 
+import view.menu.MenuJogoDuo;
+
 /**
  *
  * @author 218736
  */
 public class Partida {
+    
+    Jogador          jogador1 =   new Jogador();
+    Jogador          jogador2 =   new Jogador();
+    Baralho          baralho  =   new Baralho();
+    PilhaDescarte    descarte =   new PilhaDescarte();
+    MenuJogoDuo      view;
+   
+    public Partida(MenuJogoDuo tela){
+        this.view = tela;
+    }
+    
    public void comecarJogo(){
-       Jogador jogador1 = new Jogador();
-       Jogador jogador2 =  new Jogador();
-       Baralho baralho = new Baralho();
-       PilhaDescarte descarte = new PilhaDescarte();
-              
+       
+       // Colocar aqui a view
        baralho.embaralhar();
        baralho.distribuirCartas(jogador1,jogador2);
        descarte = baralho.discartaPrimeiraCarta();
        
    }
+   
+   
 }
