@@ -1,5 +1,8 @@
 package view.menu;
 
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import unopoo.Partida;
 
 /**
@@ -8,12 +11,15 @@ import unopoo.Partida;
  */
 public class MenuJogoDuo extends javax.swing.JFrame {
     
-    MenuPrincipal telaAnterior;
-    Partida       partida = new Partida(this);
+    public  MenuPrincipal telaAnterior;
+    public  Partida       partida       = new Partida(this);
+    public  JLabel[]      labelArray    = new JLabel[21];
 
     public MenuJogoDuo(MenuPrincipal menu) {
+        setLabelArray();
         this.telaAnterior = menu;
         initComponents();
+        partida.comecarJogo();
     }
 
     @SuppressWarnings("unchecked")
@@ -30,18 +36,25 @@ public class MenuJogoDuo extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         discarte = new javax.swing.JPanel();
         topOfDiscardPile = new javax.swing.JLabel();
-        endTurnButton = new javax.swing.JButton();
-        drawButton = new javax.swing.JButton();
-        unoButton = new javax.swing.JButton();
-        player1Label = new javax.swing.JLabel();
-        player2Label = new javax.swing.JLabel();
+        botaoPassa = new javax.swing.JButton();
+        botaoCompra = new javax.swing.JButton();
+        botaoUYNO = new javax.swing.JButton();
+        maoJogador1 = new javax.swing.JLabel();
+        maoJogador2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -135,26 +148,6 @@ public class MenuJogoDuo extends javax.swing.JFrame {
             }
         });
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/unopoo/images/Yellow0.JPG"))); // NOI18N
-        jLabel11.setMaximumSize(new java.awt.Dimension(40, 63));
-        jLabel11.setMinimumSize(new java.awt.Dimension(40, 63));
-        jLabel11.setPreferredSize(new java.awt.Dimension(40, 63));
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel11MouseClicked(evt);
-            }
-        });
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/unopoo/images/Yellow0.JPG"))); // NOI18N
-        jLabel12.setMaximumSize(new java.awt.Dimension(40, 63));
-        jLabel12.setMinimumSize(new java.awt.Dimension(40, 63));
-        jLabel12.setPreferredSize(new java.awt.Dimension(40, 63));
-        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel12MouseClicked(evt);
-            }
-        });
-
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/unopoo/images/Yellow0.JPG"))); // NOI18N
         jLabel13.setMaximumSize(new java.awt.Dimension(40, 63));
         jLabel13.setMinimumSize(new java.awt.Dimension(40, 63));
@@ -185,13 +178,118 @@ public class MenuJogoDuo extends javax.swing.JFrame {
             }
         });
 
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/unopoo/images/Yellow0.JPG"))); // NOI18N
+        jLabel15.setMaximumSize(new java.awt.Dimension(40, 63));
+        jLabel15.setMinimumSize(new java.awt.Dimension(40, 63));
+        jLabel15.setPreferredSize(new java.awt.Dimension(40, 63));
+        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel15MouseClicked(evt);
+            }
+        });
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/unopoo/images/Yellow0.JPG"))); // NOI18N
+        jLabel16.setMaximumSize(new java.awt.Dimension(40, 63));
+        jLabel16.setMinimumSize(new java.awt.Dimension(40, 63));
+        jLabel16.setPreferredSize(new java.awt.Dimension(40, 63));
+        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel16MouseClicked(evt);
+            }
+        });
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/unopoo/images/Yellow0.JPG"))); // NOI18N
+        jLabel17.setMaximumSize(new java.awt.Dimension(40, 63));
+        jLabel17.setMinimumSize(new java.awt.Dimension(40, 63));
+        jLabel17.setPreferredSize(new java.awt.Dimension(40, 63));
+        jLabel17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel17MouseClicked(evt);
+            }
+        });
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/unopoo/images/Yellow0.JPG"))); // NOI18N
+        jLabel18.setMaximumSize(new java.awt.Dimension(40, 63));
+        jLabel18.setMinimumSize(new java.awt.Dimension(40, 63));
+        jLabel18.setPreferredSize(new java.awt.Dimension(40, 63));
+        jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel18MouseClicked(evt);
+            }
+        });
+
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/unopoo/images/Yellow0.JPG"))); // NOI18N
+        jLabel19.setMaximumSize(new java.awt.Dimension(40, 63));
+        jLabel19.setMinimumSize(new java.awt.Dimension(40, 63));
+        jLabel19.setPreferredSize(new java.awt.Dimension(40, 63));
+        jLabel19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel19MouseClicked(evt);
+            }
+        });
+
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/unopoo/images/Yellow0.JPG"))); // NOI18N
+        jLabel20.setMaximumSize(new java.awt.Dimension(40, 63));
+        jLabel20.setMinimumSize(new java.awt.Dimension(40, 63));
+        jLabel20.setPreferredSize(new java.awt.Dimension(40, 63));
+        jLabel20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel20MouseClicked(evt);
+            }
+        });
+
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/unopoo/images/Yellow0.JPG"))); // NOI18N
+        jLabel21.setMaximumSize(new java.awt.Dimension(40, 63));
+        jLabel21.setMinimumSize(new java.awt.Dimension(40, 63));
+        jLabel21.setPreferredSize(new java.awt.Dimension(40, 63));
+        jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel21MouseClicked(evt);
+            }
+        });
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/unopoo/images/Yellow0.JPG"))); // NOI18N
+        jLabel11.setMaximumSize(new java.awt.Dimension(40, 63));
+        jLabel11.setMinimumSize(new java.awt.Dimension(40, 63));
+        jLabel11.setPreferredSize(new java.awt.Dimension(40, 63));
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/unopoo/images/Yellow0.JPG"))); // NOI18N
+        jLabel12.setMaximumSize(new java.awt.Dimension(40, 63));
+        jLabel12.setMinimumSize(new java.awt.Dimension(40, 63));
+        jLabel12.setPreferredSize(new java.awt.Dimension(40, 63));
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout maoJogadorAtualLayout = new javax.swing.GroupLayout(maoJogadorAtual);
         maoJogadorAtual.setLayout(maoJogadorAtualLayout);
         maoJogadorAtualLayout.setHorizontalGroup(
             maoJogadorAtualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(maoJogadorAtualLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(maoJogadorAtualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(maoJogadorAtualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(maoJogadorAtualLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(maoJogadorAtualLayout.createSequentialGroup()
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -207,20 +305,20 @@ public class MenuJogoDuo extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(maoJogadorAtualLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         maoJogadorAtualLayout.setVerticalGroup(
             maoJogadorAtualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,17 +332,27 @@ public class MenuJogoDuo extends javax.swing.JFrame {
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(maoJogadorAtualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(maoJogadorAtualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(maoJogadorAtualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(maoJogadorAtualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(23, 23, 23))
         );
 
         topOfDiscardPile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/unopoo/images/Red0.png"))); // NOI18N
@@ -273,59 +381,56 @@ public class MenuJogoDuo extends javax.swing.JFrame {
                     .addContainerGap(36, Short.MAX_VALUE)))
         );
 
-        endTurnButton.setText("Passar");
-        endTurnButton.addActionListener(new java.awt.event.ActionListener() {
+        botaoPassa.setText("Passar");
+        botaoPassa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                endTurnButtonActionPerformed(evt);
+                botaoPassaActionPerformed(evt);
             }
         });
 
-        drawButton.setText("Comprar");
-        drawButton.addActionListener(new java.awt.event.ActionListener() {
+        botaoCompra.setText("Comprar");
+        botaoCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                drawButtonActionPerformed(evt);
+                botaoCompraActionPerformed(evt);
             }
         });
 
-        unoButton.setText("UNO!!!!");
-        unoButton.addActionListener(new java.awt.event.ActionListener() {
+        botaoUYNO.setText("UNO!!!!");
+        botaoUYNO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                unoButtonActionPerformed(evt);
+                botaoUYNOActionPerformed(evt);
             }
         });
 
-        player1Label.setBackground(new java.awt.Color(102, 0, 102));
-        player1Label.setForeground(new java.awt.Color(204, 0, 204));
-        player1Label.setMaximumSize(new java.awt.Dimension(200, 50));
-        player1Label.setMinimumSize(new java.awt.Dimension(200, 50));
-        player1Label.setPreferredSize(new java.awt.Dimension(200, 50));
+        maoJogador1.setBackground(new java.awt.Color(102, 0, 102));
+        maoJogador1.setForeground(new java.awt.Color(204, 0, 204));
+        maoJogador1.setMaximumSize(new java.awt.Dimension(200, 50));
+        maoJogador1.setMinimumSize(new java.awt.Dimension(200, 50));
+        maoJogador1.setPreferredSize(new java.awt.Dimension(200, 50));
 
-        player2Label.setBackground(new java.awt.Color(102, 0, 102));
-        player2Label.setForeground(new java.awt.Color(204, 0, 204));
-        player2Label.setMaximumSize(new java.awt.Dimension(200, 50));
-        player2Label.setMinimumSize(new java.awt.Dimension(200, 50));
-        player2Label.setPreferredSize(new java.awt.Dimension(200, 50));
+        maoJogador2.setBackground(new java.awt.Color(102, 0, 102));
+        maoJogador2.setForeground(new java.awt.Color(204, 0, 204));
+        maoJogador2.setMaximumSize(new java.awt.Dimension(200, 50));
+        maoJogador2.setMinimumSize(new java.awt.Dimension(200, 50));
+        maoJogador2.setPreferredSize(new java.awt.Dimension(200, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(maoJogador2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(maoJogador1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(player2Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(player1Label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(endTurnButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(drawButton, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(botaoPassa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botaoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(149, 149, 149)
                         .addComponent(discarte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(164, 164, 164)
-                        .addComponent(unoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botaoUYNO, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 20, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -337,158 +442,184 @@ public class MenuJogoDuo extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(player1Label, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(maoJogador1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(player2Label, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(maoJogador2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(68, 68, 68)
-                            .addComponent(unoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(botaoUYNO, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(endTurnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoPassa, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(33, 33, 33)
-                            .addComponent(drawButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(botaoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(discarte, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
                 .addComponent(maoJogadorAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        setDiscardPile(getImage(currentHand[1]));
-        controller.discardCard(currentHand[1]);
-        if (controller.invalidPlay()){
-            setDiscardPile(getImage(controller.getTopOfDeck()));
-        }
+        partida.descartaCarta(1);
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        setDiscardPile(getImage(currentHand[2]));
-        controller.discardCard(currentHand[2]);
-        if (controller.invalidPlay()){
-            setDiscardPile(getImage(controller.getTopOfDeck()));
-        }
+        partida.descartaCarta(2);
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        setDiscardPile(getImage(currentHand[4]));
-        controller.discardCard(currentHand[4]);
-        if (controller.invalidPlay()){
-            setDiscardPile(getImage(controller.getTopOfDeck()));
-        }
+        partida.descartaCarta(4);
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        setDiscardPile(getImage(currentHand[5]));
-        controller.discardCard(currentHand[5]);
-        if (controller.invalidPlay()){
-            setDiscardPile(getImage(controller.getTopOfDeck()));
-        }
+        partida.descartaCarta(5);
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        setDiscardPile(getImage(currentHand[6]));
-        controller.discardCard(currentHand[6]);
-        if (controller.invalidPlay()){
-            setDiscardPile(getImage(controller.getTopOfDeck()));
-        }
+        partida.descartaCarta(6);
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        setDiscardPile(getImage(currentHand[7]));
-        controller.discardCard(currentHand[7]);
-        if (controller.invalidPlay()){
-            setDiscardPile(getImage(controller.getTopOfDeck()));
-        }
+        partida.descartaCarta(7);
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-        setDiscardPile(getImage(currentHand[8]));
-        controller.discardCard(currentHand[8]);
-        if (controller.invalidPlay()){
-            setDiscardPile(getImage(controller.getTopOfDeck()));
-        }
+        partida.descartaCarta(8);
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
-        setDiscardPile(getImage(currentHand[9]));
-        controller.discardCard(currentHand[9]);
-        if (controller.invalidPlay()){
-            setDiscardPile(getImage(controller.getTopOfDeck()));
-        }
+        partida.descartaCarta(9);
     }//GEN-LAST:event_jLabel10MouseClicked
 
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
-        setDiscardPile(getImage(currentHand[10]));
-        controller.discardCard(currentHand[10]);
-        if (controller.invalidPlay()){
-            setDiscardPile(getImage(controller.getTopOfDeck()));
-        }
-    }                                     maoJogadorAtuald jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-LAST:event_jLabel11MouseClicked
-        setDiscardPile(getImage(currentHand[11]));//GEN-FIRST:event_jLabel12MouseClicked
-        controller.discardCard(currentHand[11]);
-        if (controller.invalidPlay()){
-            setDiscardPile(getImage(controller.getTopOfDeck()));
-        }
-    }//GEN-LAST:event_jLabel12MouseClicked
-
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
-        setDiscardPile(getImage(currentHand[12]));
-        controller.discardCard(currentHand[12]);
-        if (controller.invalidPlay()){
-            setDiscardPile(getImage(controller.getTopOfDeck()));
-        }
+        partida.descartaCarta(12);
     }//GEN-LAST:event_jLabel13MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        setDiscardPile(getImage(currentHand[3]));
-        controller.discardCard(currentHand[3]);
-        if (controller.invalidPlay()){
-            setDiscardPile(getImage(controller.getTopOfDeck()));
-        }
+        partida.descartaCarta(3);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
-        setDiscardPile(getImage(currentHand[13]));
-        controller.discardCard(currentHand[13]);
-        if (controller.invalidPlay()){
-            setDiscardPile(getImage(controller.getTopOfDeck()));
-        }
+        partida.descartaCarta(13);
     }//GEN-LAST:event_jLabel14MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        setDiscardPile(getImage(currentHand[0]));
-        controller.discardCard(currentHand[0]);
-        if (controller.invalidPlay()){
-            setDiscardPile(getImage(controller.getTopOfDeck()));
-        }
+        partida.descartaCarta(0);
     }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void endTurnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endTurnButtonActionPerformed
-        controller.endTurn();
-    }//GEN-LAST:event_endTurnButtonActionPerformed
+    private void botaoPassaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPassaActionPerformed
+        partida.passaTurno();
+    }//GEN-LAST:event_botaoPassaActionPerformed
 
-    private void drawButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drawButtonActionPerformed
-        controller.draw();
-    }//GEN-LAST:event_drawButtonActionPerformed
+    
+    
+    
+    private void botaoCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCompraActionPerformed
+        partida.botaoComprar();
+    }//GEN-LAST:event_botaoCompraActionPerformed
 
-    private void unoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unoButtonActionPerformed
-        if (controller.checkUNO()){
-            JOptionPane.showMessageDialog(null, "You have won the game! Congratulations!", "You win!", JOptionPane.INFORMATION_MESSAGE);
-            hidePanel();
+    /*
+        BOTÂO UNO!
+    */
+    
+    private void botaoUYNOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoUYNOActionPerformed
+        if (partida.validaUNO()){
+            
+            JOptionPane.showMessageDialog(null, "UNO declarado!!", "Agora o bicho pega...", JOptionPane.INFORMATION_MESSAGE);
+            
         } else {
-            JOptionPane.showMessageDialog(null, "You do not have UNO", "Sorry", JOptionPane.ERROR_MESSAGE);
+            
+            JOptionPane.showMessageDialog(null, "Ta maluco? tem mais cartas nessa mão", "Sabe contar não?", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_unoButtonActionPerformed
+    }//GEN-LAST:event_botaoUYNOActionPerformed
 
+    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+        partida.descartaCarta(14);
+    }//GEN-LAST:event_jLabel15MouseClicked
+
+    private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
+         partida.descartaCarta(15);
+    }//GEN-LAST:event_jLabel16MouseClicked
+
+    private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
+         partida.descartaCarta(16);
+    }//GEN-LAST:event_jLabel17MouseClicked
+
+    private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
+         partida.descartaCarta(17);
+    }//GEN-LAST:event_jLabel18MouseClicked
+
+    private void jLabel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel19MouseClicked
+         partida.descartaCarta(18);
+    }//GEN-LAST:event_jLabel19MouseClicked
+
+    private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
+         partida.descartaCarta(19);
+    }//GEN-LAST:event_jLabel20MouseClicked
+
+    private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
+         partida.descartaCarta(20);
+    }//GEN-LAST:event_jLabel21MouseClicked
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        partida.descartaCarta(10);
+    }//GEN-LAST:event_jLabel11MouseClicked
+
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+         partida.descartaCarta(11);
+    }//GEN-LAST:event_jLabel12MouseClicked
+
+    /*
+        Metodos Auxiliares
+    */
     
+    public void apagaBotaoCompra(){
+        this.botaoCompra.setVisible(false);
+        this.botaoPassa.setVisible(true);
+    }
     
+    public void retornaBotaoCompra(){
+        this.botaoCompra.setVisible(true);
+        this.botaoPassa.setVisible(false);
+    }
     
+     public void setTamanhoMaoJogador1(int tamanhoMao){
+        maoJogador1.setText("Jogador 1 :  " + tamanhoMao + " carta(s)");
+    }
+    
+    public void setTamanhoMaoJogador2(int tamanhoMao){
+        maoJogador2.setText("Jogador 2 :  " + tamanhoMao + " carta(s)");
+    }
+    
+    public void setLabelArray(){
+        labelArray[0] = jLabel1;
+        labelArray[1] = jLabel2;
+        labelArray[2] = jLabel3;
+        labelArray[3] = jLabel4;
+        labelArray[4] = jLabel5;
+        labelArray[5] = jLabel6;
+        labelArray[6] = jLabel7;
+        labelArray[7] = jLabel8;
+        labelArray[8] = jLabel9;
+        labelArray[9] = jLabel10;
+        labelArray[10] = jLabel11;
+        labelArray[11] = jLabel12;
+        labelArray[12] = jLabel13;
+        labelArray[13] = jLabel14;
+        labelArray[14] = jLabel15;
+        labelArray[15] = jLabel16;
+        labelArray[16] = jLabel17;
+        labelArray[17] = jLabel18;
+        labelArray[18] = jLabel19;
+        labelArray[19] = jLabel20;
+        labelArray[20] = jLabel21;
+        
+    }
     
     /**
      * @param args the command line arguments
@@ -525,16 +656,24 @@ public class MenuJogoDuo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoCompra;
+    private javax.swing.JButton botaoPassa;
+    private javax.swing.JButton botaoUYNO;
     private javax.swing.JPanel discarte;
-    private javax.swing.JButton drawButton;
-    private javax.swing.JButton endTurnButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -542,10 +681,11 @@ public class MenuJogoDuo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel maoJogador1;
+    private javax.swing.JLabel maoJogador2;
     private javax.swing.JPanel maoJogadorAtual;
-    private javax.swing.JLabel player1Label;
-    private javax.swing.JLabel player2Label;
     private javax.swing.JLabel topOfDiscardPile;
-    private javax.swing.JButton unoButton;
     // End of variables declaration//GEN-END:variables
 }
+
+

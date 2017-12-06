@@ -9,8 +9,8 @@ import view.cadastro.Cadastro;
 public class MenuPrincipal extends javax.swing.JFrame {
     
     Cadastro cadastro = new Cadastro(this);
-    MenuJogo menuJogo = new MenuJogo(this);
-    //MenuJogoDuo menuJogoDuo = new MenuJogoDuo(this);
+    //MenuJogo menuJogo = new MenuJogo(this);
+    MenuJogoDuo menuJogoDuo = new MenuJogoDuo(this);
 
     public MenuPrincipal() {
         initComponents();
@@ -93,8 +93,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jogarActionPerformed
         
         this.setVisible(false);
-        menuJogo.setVisible(true);
-        //menuJogoDuo.setVisible(true);
+        //menuJogo.setVisible(true);
+        menuJogoDuo.setVisible(true);
     }//GEN-LAST:event_jogarActionPerformed
 
     /**

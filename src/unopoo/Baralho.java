@@ -16,12 +16,18 @@ public class Baralho {
     
     private final   int              numeroDeCartas = 76;
     private         ArrayList<Carta> baralho        = new ArrayList<Carta>();
+    public          PilhaDescarte    descarte;
 
-    public Baralho() {
+    public Baralho(PilhaDescarte pilhaDescarte) {
+        this.descarte = pilhaDescarte;
         criaCartasNormais();
         criaCartasEspeciais();
     }
 
+    /*
+       Criação do baralho
+    */
+    
     private void criaCartasNormais() {
         
         for (int y = 0; y < 2 ; y++){
@@ -69,6 +75,10 @@ public class Baralho {
        Collections.shuffle(baralho);
     }
 
+    /*
+        Metodos para inicio do jogo
+    */
+    
     public void distribuirCartas(Jogador jogador1, Jogador jogador2) 
     {
         for (int i = 0; i < 7; i++) {
@@ -82,31 +92,45 @@ public class Baralho {
         }
     }
     
-    public PilhaDescarte discartaPrimeiraCarta(){
+    public Carta primeiraCarta(){
+        Carta carta;
+        int   i = 0;
         
-        int tamBaralho = baralho.size();
-        Carta discarteTopoDoMonte = baralho.get(tamBaralho - 1 );
-        int i = 2;
-        boolean ver = false;
-        while (ver != true){
-            if(discarteTopoDoMonte.tipo.equals("especial"))
-            {
-                baralho.remove(tamBaralho - 1);
-                tamBaralho--;
-                System.out.println("if");
-                discarteTopoDoMonte = baralho.get(tamBaralho - 1 );
-            }
-            else
-            {
-                System.out.println("else");
-                baralho.remove(tamBaralho - 1);
-                ver = true;
-            }
+        while(baralho.get(i).getTipo().equals("especial")){
+            i++;
         }
         
-        PilhaDescarte descarte = new PilhaDescarte();
-        descarte.pilhaDescarte.push(discarteTopoDoMonte);
-        
-        return descarte;
+        carta = baralho.get(i);
+        baralho.remove(i);
+        return carta;
     }
+    
+    public Carta Compra(){
+        
+        Carta cartaTemp;
+        
+        if(baralho.isEmpty()){
+            
+            // Recupera a ultima carta descartada
+            cartaTemp =(Carta) descarte.Cartas.pop();
+            
+            // Retorna as cartas do descarte ao baralho
+            descarte.Cartas.forEach((carta) -> {
+                baralho.add((Carta) descarte.Cartas.pop());
+            });
+            
+            // Retorna a ultima carta descartada ao descarte
+            descarte.Cartas.push(cartaTemp);
+            
+            embaralhar();
+            
+        }
+        
+        cartaTemp = baralho.get(0);
+        baralho.remove(0);
+
+        return cartaTemp;
+    }
+    
+    
 }

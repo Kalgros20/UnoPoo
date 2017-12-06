@@ -14,5 +14,10 @@ import java.util.Stack;
  * @author 218736
  */
 public class PilhaDescarte {
-    Stack pilhaDescarte = new Stack();
+    Stack Cartas = new Stack();
+/*
+    void push(Carta primeiraCarta) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+*/
 }
