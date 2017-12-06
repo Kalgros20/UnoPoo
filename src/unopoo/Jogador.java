@@ -16,6 +16,7 @@ public class Jogador {
     private             String              nome;
     private             int                 pontuacao;
     public              ArrayList<Carta>    maoJogador = new ArrayList<Carta>();
+    public              Boolean             uno = false;
 
     public void adicionaCarta(Carta carta){
         maoJogador.add(carta);
@@ -23,26 +24,6 @@ public class Jogador {
 
     public void removeCarta(Carta carta) {
          maoJogador.remove(carta);
-    }
-    
-    public void  fazerJogada(){
-        
-    }
-    
-    public void  comprar(){
-        
-    }
-    
-    public void  uno(){
-        
-    }
-    
-    public void escolheCor(){
-        
-    }
-    
-    public void bater(){
-        
     }
     
 }
